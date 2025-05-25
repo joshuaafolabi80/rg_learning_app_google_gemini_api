@@ -1,0 +1,77 @@
+/* ViewScore specific styles */
+.score-table {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.score-table th {
+  position: sticky;
+  top: 0;
+  background-color: #212529;
+  color: white;
+}
+
+.score-summary {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.pagination .page-link {
+  color: #0d6efd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 0;
+  }
+  
+  .table-responsive table {
+    font-size: 0.9rem;
+  }
+  
+  .score-summary .col-md-4 {
+    margin-bottom: 15px;
+  }
+}
+/* Grouped scores table styles */
+.group-header {
+  background-color: #f8f9fa !important;
+}
+.group-header:hover {
+  background-color: #e9ecef !important;
+}
+.attempt-detail {
+  background-color: #f8f9fa;
+}
+.attempt-detail-content {
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  border-left: 3px solid #0d6efd;
+}
+
+/* Badge adjustments */
+.badge {
+  font-size: 0.85em;
+  padding: 0.35em 0.65em;
+}
+
+/* Chevron animation */
+.fa-chevron-right, .fa-chevron-down {
+  transition: transform 0.2s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .attempt-detail-content .row > div {
+    margin-bottom: 0.5rem;
+  }
+}
