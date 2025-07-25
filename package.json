@@ -1,35 +1,80 @@
 {
-  "name": "projectnew",
+  "name": "rg-quiz-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "prebuild": "rm -rf dist && mkdir -p public/sounds",
+    "postbuild": "workbox generateSW workbox-config.js",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx",
+    "format": "prettier --write .",
+    "analyze": "vite build --mode analyze",
+    "start": "node server.js",
+    "test": "vitest"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
-    "axios": "^1.9.0",
-    "bootstrap": "^5.3.6",
-    "framer-motion": "^12.11.3",
-    "lucide-react": "^0.510.0",
-    "react": "^19.1.0",
-    "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.0"
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "axios": "^1.6.7",
+    "bootstrap": "^5.3.2",
+    "framer-motion": "^10.16.4",
+    "howler": "^2.2.3",         
+    "lucide-react": "^0.291.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.2",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.18.0",
+    "zustand": "^4.4.7",
+    "react-markdown": "^8.0.0",   
+    "remark-gfm": "^3.0.1"      
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^4.4.1",
-    "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "vite": "^6.3.5",
-    "vite-plugin-pwa": "^1.0.0"
-  }
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier": "^3.2.4",
+    "rollup-plugin-visualizer": "^5.10.0",
+    "vite": "^5.0.12",
+    "vite-plugin-pwa": "^0.17.4",
+    "vitest": "^1.2.2",
+    "workbox-cli": "^7.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "The RG Quiz App is an innovative Progressive Web Application (PWA) designed to transform the learning experience for students and provide valuable insights for parents. With engaging quizzes, interactive features, and a focus on essential subjects, RG Quiz App makes education fun, accessible, and effective.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuaafolabi80/rg-quiz-app.git"
+  },
+  "keywords": [
+    "quiz",
+    "education",
+    "pwa",
+    "react",
+    "learning"
+  ],
+  "author": "Gbenga Joshua Afolabi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshuaafolabi80/rg-quiz-app/issues"
+  },
+  "homepage": "https://github.com/joshuaafolabi80/rg-quiz-app#readme"
 }

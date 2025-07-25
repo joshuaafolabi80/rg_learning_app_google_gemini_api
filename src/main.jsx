@@ -5,11 +5,17 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/ai-quiz.css'; 
-import './styles/ViewScore.css'; 
+import './styles/ViewScore.css';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
+
+// Register service worker
+serviceWorkerRegistration.register();

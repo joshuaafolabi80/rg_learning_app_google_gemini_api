@@ -12,13 +12,13 @@ export default function AboutApp() {
             <div className="card-body">
               <ol className="list-group list-group-numbered mb-4">
                 <li className="list-group-item">
-                  <strong>Select Subject and Term:</strong> Start by choosing your child’s class, term, subject, and topic from the dropdowns on the homepage.
+                  <strong>📚📅 Select Subject and Term:</strong> You start by choosing your class, term, subject and topic from the dropdowns on the set-up page.
                 </li>
                 <li className="list-group-item">
-                  <strong>Answer Questions:</strong> Your child answers multiple-choice questions tailored to the Nigerian curriculum.
+                  <strong>✏️❓ Answer Questions:</strong> Go ahead and answer multiple-choice questions tailored to the Nigerian curriculum.
                 </li>
                 <li className="list-group-item">
-                  <strong>Get Score & Learn:</strong> Instantly see results, correct answers, and explanations for learning improvement.
+                  <strong>📊🎓 Get Score & Learn:</strong> Instantly see results, correct answers, explanations and deep explanation (AI pre-built) for learning improvement.
                 </li>
               </ol>
               <Link to="/setup" className="btn btn-primary mt-3">← Back to Quiz Setup</Link>

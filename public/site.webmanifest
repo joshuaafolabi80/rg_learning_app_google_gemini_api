@@ -38,5 +38,21 @@
       "sizes": "180x180",
       "purpose": "any"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Quiz",
+      "short_name": "Quiz",
+      "description": "Start a new quiz",
+      "url": "/setup",
+      "icons": [{ "src": "/icons/quiz-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "View Scores",
+      "short_name": "Scores",
+      "description": "View your quiz scores",
+      "url": "/view-score",
+      "icons": [{ "src": "/icons/scores-icon.png", "sizes": "192x192" }]
+    }
   ]
 }

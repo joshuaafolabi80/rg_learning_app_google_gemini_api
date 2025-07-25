@@ -4,32 +4,62 @@ import axios from "axios";
 
 const ViewScore = () => {
   const [scores, setScores] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
   const [expandedNames, setExpandedNames] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const fetchScores = async () => {
+    const loadScores = () => {
       try {
-        const response = await axios.get("http://localhost:3001/scores");
-        const sortedScores = response.data.sort((a, b) => 
-          new Date(b.date) - new Date(a.date)
-        );
-        setScores(sortedScores);
-        setLoading(false);
+        // Get scores from local storage
+        const storedScores = JSON.parse(localStorage.getItem('quizScores')) || [];
+        
+        // If we have a new result from navigation, check if it already exists
+        if (location.state?.result) {
+          const newScore = location.state.result;
+          const scoreExists = storedScores.some(
+            score => score.date === newScore.date && 
+                    score.name === newScore.name &&
+                    score.score === newScore.score
+          );
+          
+          // Only add if it doesn't exist
+          if (!scoreExists) {
+            storedScores.unshift(newScore); // Add to beginning
+            localStorage.setItem('quizScores', JSON.stringify(storedScores));
+          }
+        }
+        
+        setScores(storedScores);
+        
+        // Optional: Try to sync with server if available
+        try {
+          axios.get("http://localhost:3001/api/scores").then(response => {
+            if (response.data && response.data.length > 0) {
+              setScores(prev => {
+                // Filter out any server scores that already exist locally
+                const serverScores = response.data.filter(serverScore => 
+                  !prev.some(localScore => 
+                    localScore.date === serverScore.date && 
+                    localScore.name === serverScore.name &&
+                    localScore.score === serverScore.score
+                  )
+                );
+                return [...serverScores, ...prev];
+              });
+            }
+          });
+        } catch (serverError) {
+          console.log("Couldn't fetch scores from server:", serverError);
+        }
       } catch (err) {
         setError(err.message);
-        setLoading(false);
       }
     };
 
-    fetchScores();
-
-    if (location.state?.result) {
-      setScores(prev => [location.state.result, ...prev]);
-    }
+    loadScores();
   }, [location.state]);
 
   const safeParsePercentage = (percentage) => {

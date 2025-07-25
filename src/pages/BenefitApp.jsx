@@ -12,16 +12,19 @@ export default function BenefitApp() {
             <div className="card-body">
               <ul className="list-group list-group-flush mb-4">
                 <li className="list-group-item">
-                  <strong>📘 Curriculum-Aligned Questions:</strong> Designed to reflect Nigeria's primary school curriculum accurately.
+                  <strong>📘 Curriculum-Aligned Questions:</strong> Designed to reflect Nigeria's primary and secondary school curriculum accurately.
                 </li>
                 <li className="list-group-item">
-                  <strong>⚡ Instant Feedback:</strong> Your child sees the correct answers and detailed explanations immediately.
+                  <strong>⚡ Instant Feedback:</strong> You can see the correct answers, explanations and deep explanations (AI pre-built) immediately.
                 </li>
                 <li className="list-group-item">
-                  <strong>🎨 Child-Friendly Interface:</strong> Fun visuals and engaging layout with sound prompts that keep kids motivated.
+                  <strong>🎨 User-Friendly Interface:</strong> Fun visuals and engaging layout with sound prompts that keep you motivated.
                 </li>
                 <li className="list-group-item">
-                  <strong>📊 Performance Tracking:</strong> Helps you monitor your child’s academic progress over time.
+                  <strong>📊 Performance Tracking:</strong> Helps you monitor your academic progress over time. This can also be used by Parents/Guardians to keep track of the learning progress of their children/wards in view to rewarding them (reinforced learning).
+                </li>
+                <li className="list-group-item">
+                  <strong>📝 Customized learning path/curriculum:</strong> The system can be developed to align with your learning path/curriculum.
                 </li>
               </ul>
               <Link to="/setup" className="btn btn-primary">← Back to Quiz Setup</Link>

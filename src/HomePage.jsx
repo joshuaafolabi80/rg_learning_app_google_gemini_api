@@ -10,7 +10,7 @@ const HomePage = () => {
       background: "linear-gradient(to bottom right, orange, pink, purple)"
     }}>
       <div className="p-4">
-        <h1 className="display-4 fw-bold mb-3">Welcome to RG Quiz!</h1>
+        <h1 className="display-4 fw-bold mb-3">RG Quiz & Learning System!</h1>
         <p className="lead mb-4">
           Fun & smart revision for all your subjects.
         </p>
