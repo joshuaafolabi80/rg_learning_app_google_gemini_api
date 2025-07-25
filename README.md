@@ -42,7 +42,7 @@ The app features a rich collection of quizzes across various subjects, designed 
 
 1. **Access the App**:  
    Open this link in your browser:  
-   `https://joshuaafolabi80.github.io/rg-quiz-app/`  
+   `https://github.com/joshuaafolabi80/rg_learning_app_google_gemini_api`  
 
 2. **Install to Your Device**:  
    - *Android (Chrome)*: Look for "Add to Home screen"  
